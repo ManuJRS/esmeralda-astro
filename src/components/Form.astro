@@ -1,0 +1,307 @@
+---
+
+---
+
+<div class="w-full flex flex-col items-center py-4">
+    <form
+        action="https://formspree.io/f/xjkywdoj"
+        method="POST"
+        class="p-6 bg-white shadow-lg rounded-lg"
+    >
+        <div>
+            <h2 class="font-bold text-3xl my-6">Puedes hacer tu pedido aqui</h2>
+        </div>
+        <div>
+            <p class="py-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis quasi perspiciatis deserunt atque modi, esse aliquam
+                tenetur explicabo iusto rerum!
+            </p>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">
+                Nombre completo
+                <input
+                    type="text"
+                    name="name"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+            </label>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">
+                Numero de telefono
+                <input
+                    type="tel"
+                    name="phone"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+            </label>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">
+                Direccion completa
+                <input
+                    type="text"
+                    name="direccion"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+            </label>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">
+                Correo
+                <input
+                    type="text"
+                    name="email"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+            </label>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">Cerveza Colorada</label>
+            <div class="flex items-center gap-3">
+                <button
+                    type="button"
+                    id="minusColorada"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >-</button
+                >
+                <input
+                    type="number"
+                    name="Colorada"
+                    id="quantityColorada"
+                    value="0"
+                    min="0"
+                    readonly
+                    class="w-12 text-center border rounded-lg"
+                />
+                <button
+                    type="button"
+                    id="plusColorada"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >+</button
+                >
+            </div>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">Cerveza Oasis</label>
+            <div class="flex items-center gap-3">
+                <button
+                    type="button"
+                    id="minusOasis"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >-</button
+                >
+                <input
+                    type="number"
+                    name="Oasis"
+                    id="quantityOasis"
+                    value="0"
+                    min="0"
+                    readonly
+                    class="w-12 text-center border rounded-lg"
+                />
+                <button
+                    type="button"
+                    id="plusOasis"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >+</button
+                >
+            </div>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">Cerveza Celestun</label>
+            <div class="flex items-center gap-3">
+                <button
+                    type="button"
+                    id="minusCelestun"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >-</button
+                >
+                <input
+                    type="number"
+                    name="Celestun"
+                    id="quantityCelestun"
+                    value="0"
+                    min="0"
+                    readonly
+                    class="w-12 text-center border rounded-lg"
+                />
+                <button
+                    type="button"
+                    id="plusCelestun"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >+</button
+                >
+            </div>
+        </div>
+        <div class="py-6">
+            <label class="block text-gray-700">Cerveza Yucatan</label>
+            <div class="flex items-center gap-3">
+                <button
+                    type="button"
+                    id="minusYucatan"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >-</button
+                >
+                <input
+                    type="number"
+                    name="Yucatan"
+                    id="quantityYucatan"
+                    value="0"
+                    min="0"
+                    readonly
+                    class="w-12 text-center border rounded-lg"
+                />
+                <button
+                    type="button"
+                    id="plusYucatan"
+                    class="bg-gray-200 px-3 py-1 rounded-lg hover:bg-gray-300"
+                    >+</button
+                >
+            </div>
+        </div>
+        <div class="py-6">
+            <p id="totalMoneyCounter" class="font-bold text-2xl">
+                Total Money: 0
+            </p>
+        </div>
+        <div class="py-6">
+            <label>
+                Your message:
+                <textarea
+                    name="message"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+            </label>
+        </div>
+
+        <button
+            type="submit"
+            class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600"
+            >Send</button
+        >
+    </form>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+        /** Variables para Colorada */
+        let quantityColorada = document.getElementById("quantityColorada");
+        let minusColorada = document.getElementById("minusColorada");
+        let plusColorada = document.getElementById("plusColorada");
+
+        /** Variables para Oasis */
+        let quantityOasis = document.getElementById("quantityOasis");
+        let minusOasis = document.getElementById("minusOasis");
+        let plusOasis = document.getElementById("plusOasis");
+
+        /** Variables para Celestun */
+        let quantityCelestun = document.getElementById("quantityCelestun");
+        let minusCelestun = document.getElementById("minusCelestun");
+        let plusCelestun = document.getElementById("plusCelestun");
+
+        /** Variables para Yucatan */
+        let quantityYucatan = document.getElementById("quantityYucatan");
+        let minusYucatan = document.getElementById("minusYucatan");
+        let plusYucatan = document.getElementById("plusYucatan");
+
+        /** Variable para mostrar el total */
+
+        let totalMoneyCounter = document.getElementById("totalMoneyCounter");
+
+        function moneyTotal() {
+            let money =
+                parseInt(quantityColorada.value) * 20 +
+                parseInt(quantityOasis.value) * 25 +
+                parseInt(quantityCelestun.value) * 30 +
+                parseInt(quantityYucatan.value) * 50;
+            console.log(`total de colorada: ${quantityColorada.value}`);
+            console.log(`total de oasis: ${quantityOasis.value}`);
+            console.log(
+                `total en dinero: ${quantityColorada.value * 20 + quantityOasis.value * 25}`,
+            );
+            totalMoneyCounter.textContent = `Total a pagar: ${money}`;
+        }
+
+        function decreaseColorada() {
+            let value = parseInt(quantityColorada.value);
+            if (value > 0) {
+                quantityColorada.value = value - 1;
+            }
+            console.log(quantityColorada.value);
+            moneyTotal();
+        }
+
+        function increaseColorada() {
+            let value = parseInt(quantityColorada.value);
+            if (value < 10) {
+                quantityColorada.value = value + 1;
+            }
+            console.log(quantityColorada.value);
+            moneyTotal();
+        }
+
+        function decreaseOasis() {
+            let value = parseInt(quantityOasis.value);
+            if (value > 0) {
+                quantityOasis.value = value - 1;
+            }
+            moneyTotal();
+        }
+
+        function increaseOasis() {
+            let value = parseInt(quantityOasis.value);
+            if (value < 10) {
+                quantityOasis.value = value + 1;
+            }
+            moneyTotal();
+        }
+
+        function decreaseCelestun() {
+            let value = parseInt(quantityCelestun.value);
+            if (value > 0) {
+                quantityCelestun.value = value - 1;
+            }
+            moneyTotal();
+        }
+
+        function increaseCelestun() {
+            let value = parseInt(quantityCelestun.value);
+            if (value < 10) {
+                quantityCelestun.value = value + 1;
+            }
+            moneyTotal();
+        }
+
+        function decreaseYucatan() {
+            let value = parseInt(quantityYucatan.value);
+            if (value > 0) {
+                quantityYucatan.value = value - 1;
+            }
+            moneyTotal();
+        }
+
+        function increaseYucatan() {
+            let value = parseInt(quantityYucatan.value);
+            if (value < 10) {
+                quantityYucatan.value = value + 1;
+            }
+            moneyTotal();
+        }
+
+        /** Eventos para actualizar los valores */
+        minusColorada.addEventListener("click", decreaseColorada);
+        plusColorada.addEventListener("click", increaseColorada);
+        minusOasis.addEventListener("click", decreaseOasis);
+        plusOasis.addEventListener("click", increaseOasis);
+        minusCelestun.addEventListener("click", decreaseCelestun);
+        plusCelestun.addEventListener("click", increaseCelestun);
+        minusYucatan.addEventListener("click", decreaseYucatan);
+        plusYucatan.addEventListener("click", increaseYucatan);
+
+        /** Inicializar el total al cargar la página */
+        moneyTotal();
+    });
+</script>
