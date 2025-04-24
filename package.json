@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.1",
-    "astro": "^5.5.4"
+    "astro": "^5.5.4",
+    "keen-slider": "^6.8.6",
+    "swiper": "^11.2.6"
   }
 }

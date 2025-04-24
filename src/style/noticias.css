@@ -1,0 +1,134 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    min-width: 100%;
+    padding: 0 35px;
+    background: linear-gradient(to left top, #8ad3151f, rgba(255, 0, 0, 0.404));
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+}
+
+.wrapper i {
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    font-size: 1.25rem;
+}
+
+.wrapper i:first-child {
+    left: -22px;
+}
+
+
+.wrapper i:last-child {
+    right: -22px;
+}
+
+.wrapper .news {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.news::-webkit-scrollbar {
+    display: none;
+}
+
+.news :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news.no-transition {
+    scroll-behavior: auto;
+}
+
+.news.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.news.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.news .card {
+    height: 480px;
+    list-style: none;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card .img img {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.card h2 {
+    font-weight: 500;
+    font-family: 1.56rem;
+    margin: 30px 0 5px;
+}
+
+.card span {
+    color: #6a6d78;
+    font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .news {
+        grid-auto-columns: calc((100% / 3) - 9px);
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .wrapper .news {
+        grid-auto-columns: 100%;
+    }
+
+    .news .card {
+        height: 480px;
+        list-style: none;
+        border-radius: 8px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .wrapper .news {
+
+        gap: 0px;
+
+    }
+}

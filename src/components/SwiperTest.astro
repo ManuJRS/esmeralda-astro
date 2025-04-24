@@ -1,0 +1,75 @@
+---
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+
+setTimeout(() => {
+    new Swiper(".swiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1, // Puedes ajustar el número de cards visibles
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+}, 0);
+---
+
+<div class="container">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide card-item">
+                <img
+                    src="https://res.cloudinary.com/dronteu5m/image/upload/v1743125189/Esmeralda/es5auaqgzbazreibbbs8.jpg"
+                    alt=""
+                    class="user-image"
+                />
+                <h2 class="user-name">Titulo uno</h2>
+                <p class="user-proffesion"></p>
+                <button class="message-button">Mensaje</button>
+            </div>
+            <div class="swiper-slide card-item">
+                <img
+                    src="https://res.cloudinary.com/dronteu5m/image/upload/v1743125189/Esmeralda/es5auaqgzbazreibbbs8.jpg"
+                    alt=""
+                    class="user-image"
+                />
+                <h2 class="user-name">Titulo dos</h2>
+                <p class="user-proffesion"></p>
+                <button class="message-button">Mensaje</button>
+            </div>
+            <div class="swiper-slide card-item">
+                <img
+                    src="https://res.cloudinary.com/dronteu5m/image/upload/v1743125189/Esmeralda/es5auaqgzbazreibbbs8.jpg"
+                    alt=""
+                    class="user-image"
+                />
+                <h2 class="user-name">Titulo tres</h2>
+                <p class="user-proffesion"></p>
+                <button class="message-button">Mensaje</button>
+            </div>
+            <div class="swiper-slide card-item">
+                <img
+                    src="https://res.cloudinary.com/dronteu5m/image/upload/v1743125189/Esmeralda/es5auaqgzbazreibbbs8.jpg"
+                    alt=""
+                    class="user-image"
+                />
+                <h2 class="user-name">Titulo cuatro</h2>
+                <p class="user-proffesion"></p>
+                <button class="message-button">Mensaje</button>
+            </div>
+        </div>
+        <!-- Botones de navegación -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>

@@ -163,13 +163,11 @@
             </div>
         </div>
         <div class="py-6">
-            <p id="totalMoneyCounter" class="font-bold text-2xl">
-                Total Money: 0
-            </p>
+            <p id="totalMoneyCounter" class="font-bold text-2xl"></p>
         </div>
         <div class="py-6">
             <label>
-                Your message:
+                <p class="py-2">¿Tienes algún comentario?</p>
                 <textarea
                     name="message"
                     class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -180,7 +178,7 @@
         <button
             type="submit"
             class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600"
-            >Send</button
+            >Envíar</button
         >
     </form>
 </div>
@@ -222,7 +220,7 @@
             console.log(
                 `total en dinero: ${quantityColorada.value * 20 + quantityOasis.value * 25}`,
             );
-            totalMoneyCounter.textContent = `Total a pagar: ${money}`;
+            totalMoneyCounter.textContent = `Total a pagar: $${money} MXN`;
         }
 
         function decreaseColorada() {
