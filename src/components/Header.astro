@@ -1,40 +1,87 @@
 ---
+import "../style/header.css";
 
+interface Props {
+    logo_menu: string;
+    first_link: string;
+    second_link: string;
+    third_link: string;
+    four_link: string;
+}
+
+const props = Astro.props;
 ---
 
-<!-- header -->
-<header>
-    <div class="logo">Manudev</div>
-    <nav>
-        <a href="">Home</a>
-        <a href="">Contact</a>
-        <a href="">Info</a>
+<header class="manuNav">
+    <nav class="navbar">
+        <div class="left-section">
+            <a href="#" class="logo"
+                ><img src={props.logo_menu} alt="Esmeralda Brewing" /></a
+            >
+        </div>
+
+        <div class="center-section">
+            <!-- Siempre visibles -->
+            <a href="#ubicacion" class="nav-link">{props.first_link}</a>
+            <a href="#eventos" class="nav-link">{props.second_link}</a>
+            <!-- Extras, solo desktop -->
+            <div class="extra-links">
+                <a href="#cerveza-temporada" class="nav-link"
+                    >{props.third_link}</a
+                >
+                <a href="#contacto" class="nav-link">{props.four_link}</a>
+            </div>
+        </div>
+
+        <div class="menu-icon" onclick="openSidebar()">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
+                ><path
+                    d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                ></path></svg
+            >
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <div class="close-icon" onclick="closeSidebar()">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e3e3e3"
+                    ><path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                    ></path></svg
+                >
+            </div>
+            <ul class="sidebar-links">
+                <li><a href="#cerveza-temporada">Cerveza de temporada</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
-<style>
-    a {
-        text-decoration: none;
-        color: #555;
+<script is:inline>
+    function openSidebar() {
+        document.getElementById("sidebar").classList.add("show");
     }
 
-    header {
-        width: 1140px;
-        max-width: 90%;
-        margin: auto;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        z-index: 100;
+    function closeSidebar() {
+        document.getElementById("sidebar").classList.remove("show");
     }
 
-    header .logo {
-        font-weight: bold;
-    }
-
-    header nav a {
-        margin-left: 30px;
-    }
-</style>
+    document.addEventListener("DOMContentLoaded", () => {
+        document
+            .querySelector(".menu-icon")
+            .addEventListener("click", openSidebar);
+        document
+            .querySelector(".close-icon")
+            .addEventListener("click", closeSidebar);
+    });
+</script>

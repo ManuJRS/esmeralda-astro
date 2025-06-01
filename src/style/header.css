@@ -1,24 +1,113 @@
-a {
-    text-decoration: none;
-    color: #555
+.manuNav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header {
-    width: 1140px;
-    max-width: 90%;
-    margin: auto;
-    height: 50px;
+.logo {
+    width: 90px;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 100;
+    padding: 10px 20px;
 }
 
-header .logo {
-    font-weight: bold;
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-header nav a {
-    margin-left: 30px;
+.center-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Este grupo solo se verá en desktop */
+.extra-links {
+    display: none;
+    gap: 20px;
+}
+
+/* Botón de hamburguesa */
+.menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    transition: right 0.3s ease;
+}
+
+.sidebar.show {
+    right: 0;
+}
+
+/* Botón de cerrar */
+.close-icon {
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Links del sidebar */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar-links li {
+    margin-bottom: 20px;
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+/* Responsive para desktop */
+@media(min-width: 768px) {
+    .menu-icon {
+        display: none;
+        /* Ocultar hamburguesa en desktop */
+    }
+
+    .sidebar {
+        display: none;
+        /* Ocultar sidebar en desktop */
+    }
+
+    .extra-links {
+        display: flex;
+        /* Mostrar los extras en desktop */
+    }
 }

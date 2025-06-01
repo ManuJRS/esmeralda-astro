@@ -1,184 +1,303 @@
 ---
 import "../style/carousel.css";
+
+interface Props {
+    colorada_main_title: string;
+    colorada_style: string;
+    colorada_short_description: string;
+    colorada_name_title: string;
+    colorada_price: string;
+    colorada_long_description: string;
+    colorada_mix: string;
+    colorada_flavor: string;
+    colorada_pairing: string;
+    colorada_visual_color: string;
+    colorada_ibu: string;
+    colorada_alcohol_volume: string;
+    image_colorada: string;
+
+    oasis_main_title: string;
+    oasis_style: string;
+    oasis_short_description: string;
+    oasis_name_title: string;
+    oasis_price: string;
+    oasis_long_description: string;
+    oasis_mix: string;
+    oasis_flavor: string;
+    oasis_pairing: string;
+    oasis_visual_color: string;
+    oasis_ibu: string;
+    oasis_alcohol_volume: string;
+    image_oasis: string;
+
+    yucatan_main_title: string;
+    yucatan_style: string;
+    yucatan_short_description: string;
+    yucatan_name_title: string;
+    yucatan_price: string;
+    yucatan_long_description: string;
+    yucatan_mix: string;
+    yucatan_flavor: string;
+    yucatan_pairing: string;
+    yucatan_visual_color: string;
+    yucatan_ibu: string;
+    yucatan_alcohol_volume: string;
+    image_yucatan: string;
+
+    celestun_main_title: string;
+    celestun_style: string;
+    celestun_short_description: string;
+    celestun_name_title: string;
+    celestun_price: string;
+    celestun_long_description: string;
+    celestun_mix: string;
+    celestun_flavor: string;
+    celestun_pairing: string;
+    celestun_visual_color: string;
+    celestun_ibu: string;
+    celestun_alcohol_volume: string;
+    image_celestun: string;
+}
+
+const props = Astro.props;
 ---
 
 <!-- Carousel -->
 <div class="carousel">
     <div class="list">
         <div class="item">
-            <img
-                src="https://res.cloudinary.com/dronteu5m/image/upload/v1742665695/Esmeralda/xjry4qs8zuczgrwmivyc.webp"
-                alt=""
-            />
+            <img src={props.image_celestun} alt="" />
             <div class="intro">
-                <div class="title">CERVEZA-CELESTUN</div>
-                <div class="topic">AMERICAN PALE ALE</div>
-                <div class="des">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam eveniet dolorem hic harum voluptate ea recusandae,
-                    nemo culpa at rem!
+                <div class="beer-row">
+                    <div class="beer-container">
+                        <div class="beer-mug beer-yuca">
+                            <div class="foam"></div>
+                            <div class="beer"></div>
+                            <div class="stripes"></div>
+                            <!-- NUEVO -->
+                            <div class="bubbles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="handle"></div>
+                        </div>
+                    </div>
+                    <div class="title">{props.celestun_main_title}</div>
                 </div>
+                <div class="topic">{props.celestun_style}</div>
+                <div class="des">{props.celestun_short_description}</div>
                 <button class="seeMore"> Ver Más &#8599 </button>
             </div>
             <div class="detail">
-                <div class="title"></div>
-                <div class="des"></div>
+                <div class="title">{props.celestun_name_title}</div>
+                <div class="">
+                    <strong>{props.celestun_price}</strong>
+                </div>
+                <div class="des">{props.celestun_long_description}</div>
                 <div class="specification">
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Mezcla</p>
+                        <p class="p-desc">{props.celestun_mix}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Sabor</p>
+                        <p class="p-desc">
+                            {props.celestun_flavor}
+                        </p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Combina con</p>
+                        <p class="p-desc">{props.celestun_pairing}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Color</p>
+                        <p class="p-desc">{props.celestun_visual_color}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Ibu</p>
+                        <p class="p-desc">{props.celestun_ibu}</p>
+                    </div>
+                    <div>
+                        <p class="p-title">Volumen de alcohol</p>
+                        <p class="p-desc">{props.celestun_alcohol_volume}</p>
                     </div>
                 </div>
             </div>
         </div>
         <!--item 2-->
         <div class="item">
-            <img
-                src="https://res.cloudinary.com/dronteu5m/image/upload/v1742665695/Esmeralda/m9lfzmawk7e9na5tonmt.webp"
-                alt=""
-            />
+            <img src={props.image_colorada} alt="Cerveza colorada" />
             <div class="intro">
-                <div class="title">CERVEZA-COLORADA</div>
-                <div class="topic">AMERICAN PALE ALE</div>
-                <div class="des">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam eveniet dolorem hic harum voluptate ea recusandae,
-                    nemo culpa at rem!
+                <div class="beer-row">
+                    <div class="beer-container">
+                        <div class="beer-mug beer-colorada">
+                            <div class="foam"></div>
+                            <div class="beer"></div>
+                            <div class="stripes"></div>
+                            <!-- NUEVO -->
+                            <div class="bubbles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="handle"></div>
+                        </div>
+                    </div>
+                    <div class="title">{props.colorada_main_title}</div>
                 </div>
+                <div class="topic">{props.colorada_style}</div>
+                <div class="des">{props.colorada_short_description}</div>
                 <button class="seeMore"> Ver Más &#8599 </button>
             </div>
             <div class="detail">
-                <div class="title">COLORADA</div>
+                <div class="title">{props.colorada_name_title}</div>
                 <div class="">
-                    <strong>$42 Mx</strong>
+                    <strong>{props.colorada_price}</strong>
                 </div>
-                <div class="des">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam voluptates dolorem tempora est veniam nobis
-                    deleniti quas id animi suscipit.
-                </div>
+                <div class="des">{props.colorada_long_description}</div>
                 <div class="specification">
                     <div>
-                        <p>Mezcla</p>
-                        <p>Malta y lúpulo selectos.</p>
+                        <p class="p-title">Mezcla</p>
+                        <p class="p-desc">{props.colorada_mix}</p>
                     </div>
                     <div>
-                        <p>Sabor</p>
-                        <p>Cítrico y floral suave.</p>
+                        <p class="p-title">Sabor</p>
+                        <p class="p-desc">{props.colorada_flavor}</p>
                     </div>
                     <div>
-                        <p>Combina con</p>
-                        <p>Carnes asadas y quesos.</p>
+                        <p class="p-title">Combina con</p>
+                        <p class="p-desc">{props.colorada_pairing}</p>
                     </div>
                     <div>
-                        <p>Color</p>
-                        <p>Ámbar dorado brillante.</p>
+                        <p class="p-title">Color</p>
+                        <p class="p-desc">{props.colorada_visual_color}</p>
                     </div>
                     <div>
-                        <p>Volumen de alcohol</p>
-                        <p>5.5%</p>
+                        <p class="p-title">Ibu</p>
+                        <p class="p-desc">{props.colorada_ibu}</p>
+                    </div>
+                    <div>
+                        <p class="p-title">Volumen de alcohol</p>
+                        <p class="p-desc">{props.colorada_alcohol_volume}</p>
                     </div>
                 </div>
                 <div class="chekout"></div>
             </div>
         </div>
         <div class="item">
-            <img
-                src="https://res.cloudinary.com/dronteu5m/image/upload/v1742665695/Esmeralda/xou0yezj9bsiwdqcybrc.webp"
-                alt=""
-            />
+            <img src={props.image_oasis} alt="" />
             <div class="intro">
-                <div class="title">CERVEZA-OASIS</div>
-                <div class="topic">AMERICAN PALE ALE</div>
-                <div class="des">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam eveniet dolorem hic harum voluptate ea recusandae,
-                    nemo culpa at rem!
+                <div class="beer-row">
+                    <div class="beer-container">
+                        <div class="beer-mug beer-oasis">
+                            <div class="foam"></div>
+                            <div class="beer"></div>
+                            <div class="stripes"></div>
+                            <!-- NUEVO -->
+                            <div class="bubbles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="handle"></div>
+                        </div>
+                    </div>
+                    <div class="title">{props.oasis_main_title}</div>
                 </div>
+                <div class="topic">{props.oasis_style}</div>
+                <div class="des">{props.oasis_short_description}</div>
                 <button class="seeMore"> Ver Más &#8599 </button>
             </div>
             <div class="detail">
-                <div class="title"></div>
-                <div class="des"></div>
+                <div class="title">{props.oasis_name_title}</div>
+                <div class="">
+                    <strong>{props.oasis_price}</strong>
+                </div>
+                <div class="des">{props.oasis_long_description}</div>
                 <div class="specification">
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Mezcla</p>
+                        <p class="p-desc">{props.oasis_mix}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Sabor</p>
+                        <p class="p-desc">{props.oasis_flavor}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Combina con</p>
+                        <p class="p-desc">{props.oasis_pairing}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Color</p>
+                        <p class="p-desc">{props.oasis_visual_color}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Ibu</p>
+                        <p class="p-desc">{props.oasis_ibu}</p>
+                    </div>
+                    <div>
+                        <p class="p-title">Volumen de alcohol</p>
+                        <p class="p-desc">{props.oasis_alcohol_volume}</p>
                     </div>
                 </div>
                 <div class="chekout"></div>
             </div>
         </div>
         <div class="item">
-            <img
-                src="https://res.cloudinary.com/dronteu5m/image/upload/v1742612864/Esmeralda/ezn7dihmcj43b8dijyx6.webp"
-                alt=""
-            />
+            <img src={props.image_yucatan} alt="" />
             <div class="intro">
-                <div class="title">CERVEZA-YUCATAN</div>
-                <div class="topic">AMERICAN PALE ALE</div>
-                <div class="des">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam eveniet dolorem hic harum voluptate ea recusandae,
-                    nemo culpa at rem!
+                <div class="beer-row">
+                    <div class="beer-container">
+                        <div class="beer-mug beer-yuca">
+                            <div class="foam"></div>
+                            <div class="beer"></div>
+                            <div class="stripes"></div>
+                            <!-- NUEVO -->
+                            <div class="bubbles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="handle"></div>
+                        </div>
+                    </div>
+                    <div class="title">{props.yucatan_main_title}</div>
                 </div>
+                <div class="topic">{props.yucatan_style}</div>
+                <div class="des">{props.yucatan_short_description}</div>
                 <button class="seeMore"> Ver Más &#8599 </button>
             </div>
             <div class="detail">
-                <div class="title"></div>
-                <div class="des"></div>
+                <div class="title">{props.yucatan_name_title}</div>
+                <div class="">
+                    <strong>{props.yucatan_price}</strong>
+                </div>
+                <div class="des">{props.yucatan_long_description}</div>
                 <div class="specification">
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Mezcla</p>
+                        <p class="p-desc">{props.yucatan_mix}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Sabor</p>
+                        <p class="p-desc">{props.yucatan_flavor}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Combina con</p>
+                        <p class="p-desc">{props.yucatan_pairing}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Color</p>
+                        <p class="p-desc">{props.yucatan_visual_color}</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p class="p-title">Ibu</p>
+                        <p class="p-desc">{props.yucatan_ibu}</p>
+                    </div>
+                    <div>
+                        <p class="p-title">Volumen de alcohol</p>
+                        <p class="p-desc">{props.yucatan_alcohol_volume}</p>
                     </div>
                 </div>
             </div>
@@ -186,7 +305,7 @@ import "../style/carousel.css";
     </div>
     <div class="arrows">
         <button id="prev">&lt;</button>
-        <button id="back">Volver &#8599</button>
+        <button class="btn-back" id="back">Volver &#8599</button>
         <button id="next">></button>
     </div>
 </div>

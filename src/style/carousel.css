@@ -20,6 +20,140 @@
     --item4-opacity: 1;
 }
 
+
+.beer-mug {
+    position: relative;
+    width: 80px;
+    height: 110px;
+    margin-bottom: 10px;
+    border: 4px solid #e0b130;
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: inset 0 0 0 4px white;
+
+}
+
+.beer-oasis {
+    background: #FF7E00;
+}
+
+.beer-colorada {
+    background: #e0b130;
+}
+
+.beer-yuca {
+    background: #FFBF00;
+}
+
+.beer-cel {
+    background: #FFBF00;
+}
+
+.foam {
+    position: absolute;
+    top: -18px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    border-radius: 50% 50% 0 0;
+    border: 1px solid #0000002d;
+    z-index: 2;
+
+}
+
+.handle {
+    position: absolute;
+    right: -28px;
+    top: 20px;
+    width: 25px;
+    height: 60px;
+    border: 5px solid #e0b130;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    background: transparent;
+    z-index: 1;
+}
+
+.bubbles span {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: bubble 3s infinite ease-in-out;
+}
+
+.bubbles span:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.bubbles span:nth-child(2) {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.bubbles span:nth-child(3) {
+    left: 75%;
+    animation-delay: 2s;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(to right,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1) 2px,
+            transparent 2px,
+            transparent 6px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.beer-mug::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    filter: blur(4px);
+    z-index: 0;
+}
+
+.beer-container {
+    transform: scale(0.4);
+    transform-origin: top;
+    height: 20px;
+}
+
+.beer-row {
+    display: flex;
+    align-items: center;
+
+}
+
+
 /* carousel**/
 .carousel {
     margin-top: -50px;
@@ -134,7 +268,6 @@
 }
 
 .arrows #back {
-    font-family: Poppins;
     font-weight: 500;
     border: none;
     border-bottom: 1px solid #555;
@@ -142,6 +275,15 @@
     background-color: transparent;
     opacity: 0;
     pointer-events: none;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.topic {
+    text-transform: uppercase;
+    margin-left: 80px;
 }
 
 .carousel .list .item .intro .title {
@@ -162,9 +304,9 @@
 .carousel .list .item .intro .seeMore {
     background-color: transparent;
     border: none;
+    font-size: 12px;
+    font-weight: 500;
     border-bottom: 1px solid #555;
-    font-family: Poppins;
-    font-weight: bold;
     margin-top: 1.2em;
     padding: 5px 0;
 }
@@ -247,7 +389,8 @@
 }
 
 .carousel .list .item img {
-    width: 40%;
+    width: 35%;
+    margin-top: 100px;
 }
 
 /*Efecto de desplazamiento al presionar prevbtn de las imagenes**/
@@ -433,6 +576,7 @@
 
     .carousel .list .item img {
         width: 40%;
+        margin-top: 0px;
     }
 
     .carousel.showDetail .list .item .detail .title {

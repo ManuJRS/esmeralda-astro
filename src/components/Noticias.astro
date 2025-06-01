@@ -1,19 +1,37 @@
 ---
 import "../style/noticias.css";
+interface Props {
+    first_image: string;
+    url_first_image: string;
+    second_image: string;
+    url_second_image: string;
+    third_image: string;
+    url_third_image: string;
+    four_image: string;
+    url_four_image: string;
+}
+
+const props = Astro.props;
 ---
 
-<div class="container">
+<div class="container" id="eventos">
     <div class="wrapper">
-        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div>
+            <i id="left" class="arrow_left">&lt;</i>
+        </div>
         <ul class="news">
             <li class="card">
                 <div class="img">
-                    <a
-                        href="https://www.instagram.com/p/DHcMaHPxtnK/"
-                        target="_blank"
-                    >
+                    <a href={props.url_first_image} target="_blank">
+                        <img src={props.first_image} alt="" draggable="false" />
+                    </a>
+                </div>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <a href={props.url_second_image} target="_blank">
                         <img
-                            src="https://res.cloudinary.com/dronteu5m/image/upload/v1745193764/Esmeralda/w5j0kt0gwmlka1qx4pxi.jpg"
+                            src={props.second_image}
                             alt=""
                             draggable="false"
                         />
@@ -22,48 +40,20 @@ import "../style/noticias.css";
             </li>
             <li class="card">
                 <div class="img">
-                    <a
-                        href="https://www.instagram.com/esmeraldabrewing/p/DDfjKQgP8S9/"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://res.cloudinary.com/dronteu5m/image/upload/v1745193764/Esmeralda/ktocxnk4ubd2ifjocndb.jpg"
-                            alt=""
-                            draggable="false"
-                        />
+                    <a href={props.url_third_image} target="_blank">
+                        <img src={props.third_image} alt="" draggable="false" />
                     </a>
                 </div>
             </li>
             <li class="card">
                 <div class="img">
-                    <a
-                        href="https://www.instagram.com/esmeraldataproom/p/DFqs4thpYSr/"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://res.cloudinary.com/dronteu5m/image/upload/v1743125189/Esmeralda/es5auaqgzbazreibbbs8.jpg"
-                            alt=""
-                            draggable="false"
-                        />
-                    </a>
-                </div>
-            </li>
-            <li class="card">
-                <div class="img">
-                    <a
-                        href="https://www.instagram.com/p/DF_E4yWpcoj/"
-                        target="_blank"
-                    >
-                        <img
-                            src="https://res.cloudinary.com/dronteu5m/image/upload/v1745193764/Esmeralda/atj11jzvibzzmcwkbbhu.jpg"
-                            alt=""
-                            draggable="false"
-                        />
+                    <a href={props.url_four_image} target="_blank">
+                        <img src={props.four_image} alt="" draggable="false" />
                     </a>
                 </div>
             </li>
         </ul>
-        <i id="right" class="fa-solid fa-angle-right"></i>
+        <i id="right" class="arrow_rigth">></i>
     </div>
 </div>
 

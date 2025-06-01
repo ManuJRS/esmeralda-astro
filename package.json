@@ -12,6 +12,9 @@
     "@astrojs/tailwind": "^6.0.1",
     "astro": "^5.5.4",
     "keen-slider": "^6.8.6",
+    "lottie-web": "^5.12.2",
+    "lucide": "^0.503.0",
+    "react-icons": "^5.5.0",
     "swiper": "^11.2.6"
   }
 }

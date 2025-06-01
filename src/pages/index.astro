@@ -6,14 +6,139 @@ import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import Form from "@/components/Form.astro";
 import Noticias from "@/components/Noticias.astro";
+import Footer from "@/components/Footer.astro";
+import Socios from "@/components/Socios.astro";
 import SwiperTest from "@/components/SwiperTest.astro";
+import { getPageInfo } from "@/lib/wp";
+import astroConfig from "astro.config.mjs";
+
+const { acf } = await getPageInfo("pagina-de-inicio");
 ---
 
-<Layout>
-	<Header />
-	<Carousel />
-	<Background />
-	<Noticias />
-	<Card />
-	<Form />
+<Layout
+	title_site={acf.title_site}
+	favicon_site={acf.favicon_site}
+	meta_description={acf.meta_description}
+	meta_type={acf.meta_type}
+	meta_url={acf.meta_url}
+	meta_title_share={acf.meta_title_share}
+	meta_description_share={acf.meta_description_share}
+	meta_image_share={acf.meta_image_share}
+	meta_robots={acf.meta_robots}
+	meta_author={acf.meta_author}
+>
+	<Header
+		logo_menu={acf.logo_menu}
+		first_link={acf.first_link}
+		second_link={acf.second_link}
+		third_link={acf.third_link}
+		four_link={acf.four_link}
+	/>
+	<Carousel
+		colorada_main_title={acf.colorada_main_title}
+		colorada_style={acf.colorada_style}
+		colorada_short_description={acf.colorada_short_description}
+		colorada_name_title={acf.colorada_name_title}
+		colorada_price={acf.colorada_price}
+		colorada_long_description={acf.colorada_long_description}
+		colorada_mix={acf.colorada_mix}
+		colorada_flavor={acf.colorada_flavor}
+		colorada_pairing={acf.colorada_pairing}
+		colorada_visual_color={acf.colorada_visual_color}
+		colorada_ibu={acf.colorada_ibu}
+		colorada_alcohol_volume={acf.colorada_alcohol_volume}
+		image_colorada={acf.image_colorada}
+		oasis_main_title={acf.oasis_main_title}
+		oasis_style={acf.oasis_style}
+		oasis_short_description={acf.oasis_short_description}
+		oasis_name_title={acf.oasis_name_title}
+		oasis_price={acf.oasis_price}
+		oasis_long_description={acf.oasis_long_description}
+		oasis_mix={acf.oasis_mix}
+		oasis_flavor={acf.oasis_flavor}
+		oasis_pairing={acf.oasis_pairing}
+		oasis_visual_color={acf.oasis_visual_color}
+		oasis_ibu={acf.oasis_ibu}
+		oasis_alcohol_volume={acf.oasis_alcohol_volume}
+		image_oasis={acf.image_oasis}
+		yucatan_main_title={acf.yucatan_main_title}
+		yucatan_style={acf.yucatan_style}
+		yucatan_short_description={acf.yucatan_short_description}
+		yucatan_name_title={acf.yucatan_name_title}
+		yucatan_price={acf.yucatan_price}
+		yucatan_long_description={acf.yucatan_long_description}
+		yucatan_mix={acf.yucatan_mix}
+		yucatan_flavor={acf.yucatan_flavor}
+		yucatan_pairing={acf.yucatan_pairing}
+		yucatan_visual_color={acf.yucatan_visual_color}
+		yucatan_ibu={acf.yucatan_ibu}
+		yucatan_alcohol_volume={acf.yucatan_alcohol_volume}
+		image_yucatan={acf.image_yucatan}
+		celestun_main_title={acf.celestun_main_title}
+		celestun_style={acf.celestun_style}
+		celestun_short_description={acf.celestun_short_description}
+		celestun_name_title={acf.celestun_name_title}
+		celestun_price={acf.celestun_price}
+		celestun_long_description={acf.celestun_long_description}
+		celestun_mix={acf.celestun_mix}
+		celestun_flavor={acf.celestun_flavor}
+		celestun_pairing={acf.celestun_pairing}
+		celestun_visual_color={acf.celestun_visual_color}
+		celestun_ibu={acf.celestun_ibu}
+		celestun_alcohol_volume={acf.celestun_alcohol_volume}
+		image_celestun={acf.image_celestun}
+	/>
+	<Background
+		title_background={acf.title_background}
+		adress_esmeralda={acf.adress_esmeralda}
+		title_btn={acf.title_btn}
+		map_url={acf.map_url}
+		video_background={acf.video_background}
+	/>
+	<Noticias
+		first_image={acf.first_image}
+		url_first_image={acf.url_first_image}
+		second_image={acf.second_image}
+		url_second_image={acf.url_second_image}
+		third_image={acf.third_image}
+		url_third_image={acf.url_third_image}
+		four_image={acf.four_image}
+		url_four_image={acf.url_four_image}
+	/>
+	<Card
+		seasonal_beer_title={acf.seasonal_beer_title}
+		title_beer_card={acf.title_beer_card}
+		beer_img_card={acf.beer_img_card}
+		beer_seasonal_text={acf.beer_seasonal_text}
+		know_seasonal_beer={acf.know_seasonal_beer}
+		mix_seasonal_beer={acf.mix_seasonal_beer}
+		flavor_seasonal_beer={acf.flavor_seasonal_beer}
+		Combine_seasonal_beer={acf.Combine_seasonal_beer}
+		color_seasonal_beer={acf.color_seasonal_beer}
+		volume_seasonal_beer={acf.volume_seasonal_beer}
+	/>
+	<Socios
+		title_partners={acf.title_partners}
+		partner_one={acf.partner_one}
+		partner_two={acf.partner_two}
+		partner_three={acf.partner_three}
+		partner_four={acf.partner_four}
+		partner_five={acf.partner_five}
+		partner_six={acf.partner_six}
+		partner_seven={acf.partner_seven}
+		partner_eight={acf.partner_eight}
+	/>
+	<Form title_form={acf.title_form} text_form={acf.text_form} />
+	<Footer
+		logo_footer={acf.logo_footer}
+		footer_text={acf.footer_text}
+		facebook_url={acf.facebook_url}
+		instagram_url={acf.instagram_url}
+		email_url={acf.email_url}
+		whatsapp_url={acf.whatsapp_url}
+		first_link={acf.first_link}
+		second_link={acf.second_link}
+		third_link={acf.third_link}
+		four_link={acf.four_link}
+	/>
 </Layout>

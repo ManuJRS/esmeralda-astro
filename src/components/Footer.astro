@@ -1,0 +1,158 @@
+---
+import "../style/footer.css";
+
+interface Props {
+    footer_text: string;
+    facebook_url: string;
+    instagram_url: string;
+    email_url: string;
+    whatsapp_url: string;
+    logo_footer: string;
+    first_link: string;
+    second_link: string;
+    third_link: string;
+    four_link: string;
+}
+
+const props = Astro.props;
+---
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-container">
+            <div class="footer-wrapper">
+                <div class="footer-widget">
+                    <a href="#">
+                        <img
+                            src={props.logo_footer}
+                            alt=""
+                            class="footer-logo"
+                        />
+                    </a>
+                    <p class="footer-desc">
+                        {props.footer_text}
+                    </p>
+                    <ul class="footer-socials">
+                        <li>
+                            <a href={props.facebook_url}
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-facebook-icon lucide-facebook"
+                                    ><path
+                                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                                    ></path></svg
+                                ></a
+                            >
+                        </li>
+                        <li>
+                            <a href={props.instagram_url}
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-instagram-icon lucide-instagram"
+                                    ><rect
+                                        width="20"
+                                        height="20"
+                                        x="2"
+                                        y="2"
+                                        rx="5"
+                                        ry="5"></rect><path
+                                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                                    ></path><line
+                                        x1="17.5"
+                                        x2="17.51"
+                                        y1="6.5"
+                                        y2="6.5"></line></svg
+                                ></a
+                            >
+                        </li>
+                        <li>
+                            <a href={props.email_url}
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-mail-icon lucide-mail"
+                                    ><path
+                                        d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                                    ></path><rect
+                                        x="2"
+                                        y="4"
+                                        width="20"
+                                        height="16"
+                                        rx="2"></rect></svg
+                                ></a
+                            >
+                        </li>
+                        <li>
+                            <a href={props.whatsapp_url}
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-phone-icon lucide-phone"
+                                    ><path
+                                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                                    ></path></svg
+                                ></a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h6><strong>Enlaces</strong></h6>
+                    <ul class="links">
+                        <li><a href="#ubicacion">Ubicación</a></li>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li>
+                            <a href="#cerveza-temporada">Cerveza de temporada</a
+                            >
+                        </li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h6><strong></strong></h6>
+                </div>
+                <div class="footer-widget">
+                    <h6><strong></strong></h6>
+                </div>
+            </div>
+            <div class="copyright-wrapper">
+                <p>
+                    Design and Developed by <a
+                        href="https://manufrontdev.netlify.app/"
+                        target="_blank"><u>ManuDev</u></a
+                    >
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

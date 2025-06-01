@@ -1,0 +1,69 @@
+---
+interface Props {
+    title_partners: string;
+    partner_one: string;
+    partner_two: string;
+    partner_three: string;
+    partner_four: string;
+    partner_five: string;
+    partner_six: string;
+    partner_seven: string;
+    partner_eight: string;
+}
+const props = Astro.props;
+---
+
+<div class="mt-20 mb-20 socios-content relative overflow-hidden">
+    <div
+        class="w-full mb-10 flex justify-center text-5xl font-bold text-brand-bgGold"
+    >
+        <h2 class="title text-2xl sm:text-3xl lg:text-5xl font-bold">
+            {props.title_partners}
+        </h2>
+    </div>
+    <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-3 justify-center">
+        <div class="flex justify-center">
+            <img src={props.partner_one} alt="Socio de esmeralda" />
+        </div>
+        <div class="flex justify-center">
+            <img src={props.partner_two} alt="Socio de esmeralda" />
+        </div>
+        <div class="flex justify-center">
+            <img src={props.partner_three} alt="Socio de esmeralda" />
+        </div>
+        <div class="flex justify-center">
+            <img src={props.partner_four} alt="Socio de esmeralda" />
+        </div>
+        <div class="flex justify-center">
+            <img src={props.partner_five} alt="Socio de esmeralda" />
+        </div>
+        <div class="flex justify-center">
+            <img src={props.partner_six} alt="Socio de esmeralda" />
+        </div>
+        <div class="flex justify-center">
+            <img src={props.partner_seven} alt="Socio de esmeralda" />
+        </div>
+        <div class="flex justify-center">
+            <img src={props.partner_eight} alt="Socio de esmeralda" />
+        </div>
+    </div>
+</div>
+
+<style>
+    @media (max-width: 639px) {
+        .socios-content::before {
+            width: 400px;
+            height: 200px;
+            content: "";
+            background-image: linear-gradient(45deg, #8ad315, rgb(255, 0, 0));
+            position: absolute;
+            z-index: -1;
+            border-radius: 20% 30% 80% 10%;
+            filter: blur(150px);
+            top: 60%;
+            left: 30%;
+            transform: translate(-10%, -50%);
+            transition: 1s;
+        }
+    }
+</style>

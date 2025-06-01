@@ -4,7 +4,13 @@ export default {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          bgGold: '#e0b130',
+        },
+      },
+    },
   },
   plugins: [],
 }

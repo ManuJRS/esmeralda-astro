@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+.title {
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.p-title {
+    font-family: "Montserrat", sans-serif;
+}
+
+.title-bg {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.footer-desc {
+    font-family: "Open Sans", sans-serif;
+
+}
+
+.btn-back {
+    font-family: "Quicksand", sans-serif;
+
+}
+
+.p-desc {
+    font-family: "Open Sans", sans-serif;
+
+}
+
+.des {
+    font-family: "Open Sans", sans-serif;
+}
+
+.seeMore {
+    font-family: "Quicksand", sans-serif;
+}
+
+.bg-btn {
+    transition: all 0.3s ease-out;
+    background-color: #e0b130;
+}
+
+.bg-btn:hover {
+    transition: all 0.3s ease-out;
+}
+
+@media (max-width: 639px) {
+    .title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 18px !important;
+    }
+
+    .topic {
+        font-size: 15px !important;
+    }
+
+    .specification {
+        margin-top: 2px !important;
+    }
+
+    .des {
+        font-family: "Open Sans", sans-serif;
+        font-size: 12px !important;
+        padding-top: 5px;
+    }
+}
+
+.container::before {
+    width: 500px;
+    height: 300px;
+    content: '';
+    background-image: linear-gradient(45deg, #8ad315, rgb(255, 0, 0));
+    position: absolute;
+    z-index: -1;
+    border-radius: 20% 30% 80% 10%;
+    filter: blur(150px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+    transition: 1s;
+}

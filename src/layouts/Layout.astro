@@ -1,26 +1,54 @@
 ---
 import "../style/global.css";
+interface Props {
+	title_site: string;
+	favicon_site: string;
+	meta_description: string;
+	meta_type: string;
+	meta_url: string;
+	meta_title_share: string;
+	meta_description_share: string;
+	meta_image_share: string;
+	meta_robots: string;
+	meta_author: string;
+}
+const props = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-YQ9KQKS8YK"
+		></script>
+		<script type="text/javascript">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-YQ9KQKS8YK");
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Esmeralda Brewing || Website</title>
+		<link rel="icon" type="image/svg+xml" href={props.favicon_site} />
+		<meta property="og:title" content={props.meta_title_share} />
+		<meta
+			property="og:description"
+			content={props.meta_description_share}
+		/>
+		<meta property="og:type" content={props.meta_type} />
+		<meta property="og:url" content={props.meta_url} />
+		<meta property="og:image" content={props.meta_image_share} />
+		<meta property="og:description" content={props.meta_description} />
+		<meta name="robots" content={props.meta_robots} />
+		<meta name="author" content={props.meta_author} />
+		<title>{props.title_site}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
