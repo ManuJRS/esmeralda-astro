@@ -22,14 +22,20 @@ const props = Astro.props;
 
         <div class="center-section">
             <!-- Siempre visibles -->
-            <a href="#ubicacion" class="nav-link">{props.first_link}</a>
-            <a href="#eventos" class="nav-link">{props.second_link}</a>
+            <a href="#ubicacion" class="nav-link text-focus-in"
+                >{props.first_link}</a
+            >
+            <a href="#eventos" class="nav-link text-focus-in-one"
+                >{props.second_link}</a
+            >
             <!-- Extras, solo desktop -->
             <div class="extra-links">
-                <a href="#cerveza-temporada" class="nav-link"
+                <a href="#cerveza-temporada" class="nav-link text-focus-in-two"
                     >{props.third_link}</a
                 >
-                <a href="#contacto" class="nav-link">{props.four_link}</a>
+                <a href="#contacto" class="nav-link text-focus-in-three"
+                    >{props.four_link}</a
+                >
             </div>
         </div>
 
